@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+    <!--日志文件主目录-->
+    <property name="LOG_HOME" value="/Users/free/project/hello-spring-security/log"/>
+    <!--日志文件名称：这里spring.application.name表示工程名称-->
+    <springProperty scope="context" name="APP_NAME" source="spring.application.name"/>
+    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter"/>
+    <conversionRule conversionWord="wex"
+                    converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter"/>
+    <conversionRule conversionWord="wEx"
+                    converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter"/>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%clr([%d{yy-MM-dd HH:mm:ss.SSS}]){green}%clr([${LOG_LEVEL_PATTERN:-%5p}]){yellow}%clr([${PID:- }]){magenta}%clr(%-40.40(\(%file:%line\))){cyan}%clr(:){faint}%m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}</pattern>
+        </encoder>
+    </appender>
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/${APP_NAME}.log</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/${APP_NAME}-%d{yy-MM-dd}.log</fileNamePattern>
+            <maxHistory>15</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>[%date{yy-MM-dd HH:mm:ss.SSS}][%level][${PID}]%-40.40(\(%file:%line\))-%msg%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 将文件输出设置成异步输出 -->
+    <appender name="ASYNC-OUTPUT" class="ch.qos.logback.classic.AsyncAppender">
+        <!-- 不丢失日志.默认的,如果队列的80%已满,则会丢弃TRACT、DEBUG、INFO级别的日志 -->
+        <discardingThreshold>0</discardingThreshold>
+        <!-- 更改默认的队列的深度,该值会影响性能.默认值为256 -->
+        <queueSize>256</queueSize>
+        <!-- 添加附加的appender,最多只能添加一个 -->
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </appender>
+
+    <logger name="com.jq" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </logger>
+
+    <logger name="com.jq.config.CustomLogListener" level="INFO"/>
+    <logger name="springfox.documentation" level="WARN"/>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+</configuration>

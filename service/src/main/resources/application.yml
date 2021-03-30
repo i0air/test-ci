@@ -1,0 +1,10 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: hello-spring-security
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.50.201:3306/toolkit?serverTimezone=UTC&userUnicode=true
+    username: toolkit
+    password: 12345678
