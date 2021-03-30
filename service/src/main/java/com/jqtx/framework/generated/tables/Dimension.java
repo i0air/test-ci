@@ -4,9 +4,9 @@
 package com.jqtx.framework.generated.tables;
 
 
-import com.jqtx.framework.generated.tables.records.DimensionRecord;
 import com.jqtx.framework.generated.Keys;
 import com.jqtx.framework.generated.Toolkit;
+import com.jqtx.framework.generated.tables.records.DimensionRecord;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,7 +16,7 @@ import org.jooq.ForeignKey;
 import org.jooq.Identity;
 import org.jooq.Name;
 import org.jooq.Record;
-import org.jooq.Row3;
+import org.jooq.Row5;
 import org.jooq.Schema;
 import org.jooq.Table;
 import org.jooq.TableField;
@@ -55,14 +55,24 @@ public class Dimension extends TableImpl<DimensionRecord> {
     public final TableField<DimensionRecord, UInteger> ID = createField(DSL.name("id"), SQLDataType.INTEGERUNSIGNED.nullable(false).identity(true), this, "");
 
     /**
-     * The column <code>toolkit.dimension.region_code</code>.
-     */
-    public final TableField<DimensionRecord, String> REGION_CODE = createField(DSL.name("region_code"), SQLDataType.VARCHAR(50).nullable(false), this, "");
-
-    /**
      * The column <code>toolkit.dimension.dept_code</code>.
      */
-    public final TableField<DimensionRecord, String> DEPT_CODE = createField(DSL.name("dept_code"), SQLDataType.VARCHAR(50).nullable(false), this, "");
+    public final TableField<DimensionRecord, String> DEPT_CODE = createField(DSL.name("dept_code"), SQLDataType.VARCHAR(50), this, "");
+
+    /**
+     * The column <code>toolkit.dimension.region_lv0_code</code>.
+     */
+    public final TableField<DimensionRecord, String> REGION_LV0_CODE = createField(DSL.name("region_lv0_code"), SQLDataType.VARCHAR(50), this, "");
+
+    /**
+     * The column <code>toolkit.dimension.region_lv1_code</code>.
+     */
+    public final TableField<DimensionRecord, String> REGION_LV1_CODE = createField(DSL.name("region_lv1_code"), SQLDataType.VARCHAR(50), this, "");
+
+    /**
+     * The column <code>toolkit.dimension.region_lv2_code</code>.
+     */
+    public final TableField<DimensionRecord, String> REGION_LV2_CODE = createField(DSL.name("region_lv2_code"), SQLDataType.VARCHAR(50), this, "");
 
     private Dimension(Name alias, Table<DimensionRecord> aliased) {
         this(alias, aliased, null);
@@ -144,11 +154,11 @@ public class Dimension extends TableImpl<DimensionRecord> {
     }
 
     // -------------------------------------------------------------------------
-    // Row3 type methods
+    // Row5 type methods
     // -------------------------------------------------------------------------
 
     @Override
-    public Row3<UInteger, String, String> fieldsRow() {
-        return (Row3) super.fieldsRow();
+    public Row5<UInteger, String, String, String, String> fieldsRow() {
+        return (Row5) super.fieldsRow();
     }
 }

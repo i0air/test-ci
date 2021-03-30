@@ -4,9 +4,9 @@
 package com.jqtx.framework.generated.tables;
 
 
-import com.jqtx.framework.generated.tables.records.UserDimensionRecord;
 import com.jqtx.framework.generated.Keys;
 import com.jqtx.framework.generated.Toolkit;
+import com.jqtx.framework.generated.tables.records.UserDimensionRecord;
 
 import java.util.Arrays;
 import java.util.List;

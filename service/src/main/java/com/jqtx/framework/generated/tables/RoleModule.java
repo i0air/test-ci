@@ -4,9 +4,9 @@
 package com.jqtx.framework.generated.tables;
 
 
-import com.jqtx.framework.generated.tables.records.RoleModuleRecord;
 import com.jqtx.framework.generated.Keys;
 import com.jqtx.framework.generated.Toolkit;
+import com.jqtx.framework.generated.tables.records.RoleModuleRecord;
 
 import java.util.Arrays;
 import java.util.List;
@@ -57,7 +57,7 @@ public class RoleModule extends TableImpl<RoleModuleRecord> {
     /**
      * The column <code>toolkit.role_module.role_id</code>.
      */
-    public final TableField<RoleModuleRecord, UInteger> ROLE_ID = createField(DSL.name("role_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "");
+    public final TableField<RoleModuleRecord, Integer> ROLE_ID = createField(DSL.name("role_id"), SQLDataType.INTEGER.nullable(false), this, "");
 
     /**
      * The column <code>toolkit.role_module.module_id</code>.
@@ -148,7 +148,7 @@ public class RoleModule extends TableImpl<RoleModuleRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Row3<UInteger, UInteger, UInteger> fieldsRow() {
+    public Row3<UInteger, Integer, UInteger> fieldsRow() {
         return (Row3) super.fieldsRow();
     }
 }

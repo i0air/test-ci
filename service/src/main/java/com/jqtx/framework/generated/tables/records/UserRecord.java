@@ -100,7 +100,7 @@ public class UserRecord extends UpdatableRecordImpl<UserRecord> implements Recor
     }
 
     /**
-     * Setter for <code>toolkit.user.status</code>. 用户状态，0-正常，1-锁定，999-删除
+     * Setter for <code>toolkit.user.status</code>. 用户状态，0-正常，1-锁定，999-过期
      */
     public UserRecord setStatus(UInteger value) {
         set(5, value);
@@ -108,7 +108,7 @@ public class UserRecord extends UpdatableRecordImpl<UserRecord> implements Recor
     }
 
     /**
-     * Getter for <code>toolkit.user.status</code>. 用户状态，0-正常，1-锁定，999-删除
+     * Getter for <code>toolkit.user.status</code>. 用户状态，0-正常，1-锁定，999-过期
      */
     public UInteger getStatus() {
         return (UInteger) get(5);

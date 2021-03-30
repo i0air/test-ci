@@ -18,25 +18,33 @@ public class Dimension implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private UInteger id;
-    private String   regionCode;
     private String   deptCode;
+    private String   regionLv0Code;
+    private String   regionLv1Code;
+    private String   regionLv2Code;
 
     public Dimension() {}
 
     public Dimension(Dimension value) {
         this.id = value.id;
-        this.regionCode = value.regionCode;
         this.deptCode = value.deptCode;
+        this.regionLv0Code = value.regionLv0Code;
+        this.regionLv1Code = value.regionLv1Code;
+        this.regionLv2Code = value.regionLv2Code;
     }
 
     public Dimension(
         UInteger id,
-        String   regionCode,
-        String   deptCode
+        String   deptCode,
+        String   regionLv0Code,
+        String   regionLv1Code,
+        String   regionLv2Code
     ) {
         this.id = id;
-        this.regionCode = regionCode;
         this.deptCode = deptCode;
+        this.regionLv0Code = regionLv0Code;
+        this.regionLv1Code = regionLv1Code;
+        this.regionLv2Code = regionLv2Code;
     }
 
     /**
@@ -55,21 +63,6 @@ public class Dimension implements Serializable {
     }
 
     /**
-     * Getter for <code>toolkit.dimension.region_code</code>.
-     */
-    public String getRegionCode() {
-        return this.regionCode;
-    }
-
-    /**
-     * Setter for <code>toolkit.dimension.region_code</code>.
-     */
-    public Dimension setRegionCode(String regionCode) {
-        this.regionCode = regionCode;
-        return this;
-    }
-
-    /**
      * Getter for <code>toolkit.dimension.dept_code</code>.
      */
     public String getDeptCode() {
@@ -84,13 +77,60 @@ public class Dimension implements Serializable {
         return this;
     }
 
+    /**
+     * Getter for <code>toolkit.dimension.region_lv0_code</code>.
+     */
+    public String getRegionLv0Code() {
+        return this.regionLv0Code;
+    }
+
+    /**
+     * Setter for <code>toolkit.dimension.region_lv0_code</code>.
+     */
+    public Dimension setRegionLv0Code(String regionLv0Code) {
+        this.regionLv0Code = regionLv0Code;
+        return this;
+    }
+
+    /**
+     * Getter for <code>toolkit.dimension.region_lv1_code</code>.
+     */
+    public String getRegionLv1Code() {
+        return this.regionLv1Code;
+    }
+
+    /**
+     * Setter for <code>toolkit.dimension.region_lv1_code</code>.
+     */
+    public Dimension setRegionLv1Code(String regionLv1Code) {
+        this.regionLv1Code = regionLv1Code;
+        return this;
+    }
+
+    /**
+     * Getter for <code>toolkit.dimension.region_lv2_code</code>.
+     */
+    public String getRegionLv2Code() {
+        return this.regionLv2Code;
+    }
+
+    /**
+     * Setter for <code>toolkit.dimension.region_lv2_code</code>.
+     */
+    public Dimension setRegionLv2Code(String regionLv2Code) {
+        this.regionLv2Code = regionLv2Code;
+        return this;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Dimension (");
 
         sb.append(id);
-        sb.append(", ").append(regionCode);
         sb.append(", ").append(deptCode);
+        sb.append(", ").append(regionLv0Code);
+        sb.append(", ").append(regionLv1Code);
+        sb.append(", ").append(regionLv2Code);
 
         sb.append(")");
         return sb.toString();

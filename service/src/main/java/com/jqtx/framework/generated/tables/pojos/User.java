@@ -140,14 +140,14 @@ public class User implements Serializable {
     }
 
     /**
-     * Getter for <code>toolkit.user.status</code>. 用户状态，0-正常，1-锁定，999-删除
+     * Getter for <code>toolkit.user.status</code>. 用户状态，0-正常，1-锁定，999-过期
      */
     public UInteger getStatus() {
         return this.status;
     }
 
     /**
-     * Setter for <code>toolkit.user.status</code>. 用户状态，0-正常，1-锁定，999-删除
+     * Setter for <code>toolkit.user.status</code>. 用户状态，0-正常，1-锁定，999-过期
      */
     public User setStatus(UInteger status) {
         this.status = status;

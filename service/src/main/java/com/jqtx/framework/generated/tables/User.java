@@ -4,9 +4,9 @@
 package com.jqtx.framework.generated.tables;
 
 
-import com.jqtx.framework.generated.tables.records.UserRecord;
 import com.jqtx.framework.generated.Keys;
 import com.jqtx.framework.generated.Toolkit;
+import com.jqtx.framework.generated.tables.records.UserRecord;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -76,9 +76,9 @@ public class User extends TableImpl<UserRecord> {
     public final TableField<UserRecord, String> NAME = createField(DSL.name("name"), SQLDataType.VARCHAR(255).nullable(false), this, "显示名");
 
     /**
-     * The column <code>toolkit.user.status</code>. 用户状态，0-正常，1-锁定，999-删除
+     * The column <code>toolkit.user.status</code>. 用户状态，0-正常，1-锁定，999-过期
      */
-    public final TableField<UserRecord, UInteger> STATUS = createField(DSL.name("status"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "用户状态，0-正常，1-锁定，999-删除");
+    public final TableField<UserRecord, UInteger> STATUS = createField(DSL.name("status"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "用户状态，0-正常，1-锁定，999-过期");
 
     /**
      * The column <code>toolkit.user.login_times</code>. 登录次数

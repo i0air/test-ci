@@ -4,9 +4,9 @@
 package com.jqtx.framework.generated.tables;
 
 
-import com.jqtx.framework.generated.tables.records.RegisteredSourceRecord;
 import com.jqtx.framework.generated.Keys;
 import com.jqtx.framework.generated.Toolkit;
+import com.jqtx.framework.generated.tables.records.RegisteredSourceRecord;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;

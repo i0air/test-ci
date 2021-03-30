@@ -19,7 +19,7 @@ public class Role implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private UInteger      id;
-    private String        parentCode;
+    private Integer       pid;
     private String        code;
     private String        name;
     private LocalDateTime createTime;
@@ -29,7 +29,7 @@ public class Role implements Serializable {
 
     public Role(Role value) {
         this.id = value.id;
-        this.parentCode = value.parentCode;
+        this.pid = value.pid;
         this.code = value.code;
         this.name = value.name;
         this.createTime = value.createTime;
@@ -38,14 +38,14 @@ public class Role implements Serializable {
 
     public Role(
         UInteger      id,
-        String        parentCode,
+        Integer       pid,
         String        code,
         String        name,
         LocalDateTime createTime,
         LocalDateTime updateTime
     ) {
         this.id = id;
-        this.parentCode = parentCode;
+        this.pid = pid;
         this.code = code;
         this.name = name;
         this.createTime = createTime;
@@ -68,17 +68,17 @@ public class Role implements Serializable {
     }
 
     /**
-     * Getter for <code>toolkit.role.parent_code</code>. 父编码
+     * Getter for <code>toolkit.role.pid</code>. 父编码
      */
-    public String getParentCode() {
-        return this.parentCode;
+    public Integer getPid() {
+        return this.pid;
     }
 
     /**
-     * Setter for <code>toolkit.role.parent_code</code>. 父编码
+     * Setter for <code>toolkit.role.pid</code>. 父编码
      */
-    public Role setParentCode(String parentCode) {
-        this.parentCode = parentCode;
+    public Role setPid(Integer pid) {
+        this.pid = pid;
         return this;
     }
 
@@ -147,7 +147,7 @@ public class Role implements Serializable {
         StringBuilder sb = new StringBuilder("Role (");
 
         sb.append(id);
-        sb.append(", ").append(parentCode);
+        sb.append(", ").append(pid);
         sb.append(", ").append(code);
         sb.append(", ").append(name);
         sb.append(", ").append(createTime);

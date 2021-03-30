@@ -8,3 +8,6 @@ spring:
     url: jdbc:mysql://192.168.50.201:3306/toolkit?serverTimezone=UTC&userUnicode=true
     username: toolkit
     password: 12345678
+jwt:
+  key: "jwt-key-jq"
+  ttl: 15

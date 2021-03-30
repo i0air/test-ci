@@ -18,7 +18,7 @@ public class RoleModule implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private UInteger id;
-    private UInteger roleId;
+    private Integer  roleId;
     private UInteger moduleId;
 
     public RoleModule() {}
@@ -31,7 +31,7 @@ public class RoleModule implements Serializable {
 
     public RoleModule(
         UInteger id,
-        UInteger roleId,
+        Integer  roleId,
         UInteger moduleId
     ) {
         this.id = id;
@@ -57,14 +57,14 @@ public class RoleModule implements Serializable {
     /**
      * Getter for <code>toolkit.role_module.role_id</code>.
      */
-    public UInteger getRoleId() {
+    public Integer getRoleId() {
         return this.roleId;
     }
 
     /**
      * Setter for <code>toolkit.role_module.role_id</code>.
      */
-    public RoleModule setRoleId(UInteger roleId) {
+    public RoleModule setRoleId(Integer roleId) {
         this.roleId = roleId;
         return this;
     }

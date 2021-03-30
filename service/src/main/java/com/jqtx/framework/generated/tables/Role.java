@@ -4,9 +4,9 @@
 package com.jqtx.framework.generated.tables;
 
 
-import com.jqtx.framework.generated.tables.records.RoleRecord;
 import com.jqtx.framework.generated.Keys;
 import com.jqtx.framework.generated.Toolkit;
+import com.jqtx.framework.generated.tables.records.RoleRecord;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -56,9 +56,9 @@ public class Role extends TableImpl<RoleRecord> {
     public final TableField<RoleRecord, UInteger> ID = createField(DSL.name("id"), SQLDataType.INTEGERUNSIGNED.nullable(false).identity(true), this, "主键ID");
 
     /**
-     * The column <code>toolkit.role.parent_code</code>. 父编码
+     * The column <code>toolkit.role.pid</code>. 父编码
      */
-    public final TableField<RoleRecord, String> PARENT_CODE = createField(DSL.name("parent_code"), SQLDataType.VARCHAR(255), this, "父编码");
+    public final TableField<RoleRecord, Integer> PID = createField(DSL.name("pid"), SQLDataType.INTEGER, this, "父编码");
 
     /**
      * The column <code>toolkit.role.code</code>. 编码
@@ -164,7 +164,7 @@ public class Role extends TableImpl<RoleRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Row6<UInteger, String, String, String, LocalDateTime, LocalDateTime> fieldsRow() {
+    public Row6<UInteger, Integer, String, String, LocalDateTime, LocalDateTime> fieldsRow() {
         return (Row6) super.fieldsRow();
     }
 }
