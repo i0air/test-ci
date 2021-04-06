@@ -2,7 +2,6 @@ package com.jqtx.framework.security.jwt;
 
 import com.jqtx.framework.security.service.UserDetailsServiceImpl;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,6 +9,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+import javax.annotation.Resource;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -19,10 +19,10 @@ import java.io.IOException;
 @Slf4j
 public class AuthTokenFilter extends OncePerRequestFilter {
 
-    @Autowired
+    @Resource
     private JwtUtil jwtUtil;
 
-    @Autowired
+    @Resource
     private UserDetailsServiceImpl userDetailsService;
 
     private String parseJwt(HttpServletRequest request) {
